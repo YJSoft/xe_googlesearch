@@ -1,0 +1,32 @@
+<!--@if(!$_loaded)-->
+    {@ $_loaded = true; }
+
+<!--// 기본 스킨 -->
+<!--@if($module_info->colorset == "normal")-->
+    <div id="spot">
+        <form action="{getUrl()}" method="GET" class="search" id="fo_is" no-error-return-url="true" >
+            <input type="hidden" name="mid" value="{$mid}" />
+            <input type="hidden" name="act" value="IS" />
+            <input type="hidden" name="where" value="{$where}" />
+			<input type="hidden" name="search_target" value="title_content" />
+            <input name="is_keyword" type="text" required value="{$is_keyword}"/>
+            <input type="submit" value="{$lang->cmd_search}" />
+        </form>
+    </div>
+<!--@end-->
+<!--// For Simplestrap -->
+<!--@if($module_info->colorset != "normal")-->
+    <div id="spot">
+        <form action="{getUrl()}" method="GET" class="form" id="fo_is" no-error-return-url="true" >
+            <input type="hidden" name="mid" value="{$mid}" />
+            <input type="hidden" name="act" value="IS" />
+            <input type="hidden" name="where" value="{$where}" />
+            <input type="hidden" name="search_target" value="title_content" />
+            <div class="input-group">
+                <input name="is_keyword" type="text" required value="{$is_keyword}" class="form-control input-lg" />
+                <span class="input-group-btn"><button type="submit" class="btn btn-primary btn-lg"><span class="icon icon-search"></span> {$lang->cmd_search}</button></span>
+            </div>
+        </form>
+    </div>
+<!--@end-->
+<!--@end-->
